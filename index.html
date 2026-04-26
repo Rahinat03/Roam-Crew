@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoamCrew | Live Boldly - Your Xperience Curators</title>
+  <meta name="description" content="Curated moments Ghana, Corporate hangouts Accra, Stress-free travel planning. Experience the best of adventure, culture, and connections." />
+  <meta name="keywords" content="authentic Ghanaian experiences, curated moments, stress-free travel planning, corporate team bonding Accra, family friendly tours Ghana, Ghana heritage tours, Diaspora travel Ghana" />
+  <meta property="og:title" content="RoamCrew | Live Boldly - Your Xperience Curators" />
+  <meta property="og:description" content="Ghana's premier lifestyle travel crew. Corporate, Family & Diaspora adventures. End-to-end planning from the crew that lives it." />
+  <meta property="og:image" content="assets/images/roamcrew-logo.png" />
+  <link rel="icon" type="image/png" href="assets/roamcrew-logo_favi.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/roamcrew-logo.png" alt="RoamCrew Logo" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="nav-link">Services ▾</a>
+          <div class="dropdown-menu">
+            <a href="corporate.html">Corporate Trips</a>
+            <a href="family.html">Family & Group</a>
+            <a href="individual.html">Diaspora & Individual</a>
+          </div>
+        <li><a href="records.html">Roam Records</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 data-reveal>ADVENTURE.CULTURE.CONNECTIONS</h1>
+      <p data-reveal>Curated Trips For Curated Souls</p>
+      <div class="hero-actions" data-reveal>
+        <a href="contact.html" class="btn btn-primary">Start Your Journey</a>
+        <a href="#upcoming" class="btn btn-outline-white">Explore Trips</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== TRUST BAR ===== -->
+    <section class="trust-badges container">
+      <div class="trust-containers">
+        <p class="trust-label">Our Trusted Partners </p>
+        <div class="trust-carousel-wrapper">
+          <div class="trust-logos">
+            <!-- First set -->
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Sapient Envision.png" alt="Safari Valley" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Aqua Safari.png" alt="Hillburi" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Nkyinkyim-museum.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/bunso.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/innovare.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/s_valley.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+
+            <!-- Second set (duplicate for seamless loop) -->
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Sapient Envision.png" alt="Safari Valley" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Aqua Safari.png" alt="Hillburi" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/Nkyinkyim-museum.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/bunso.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/innovare.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-logo-item">
+              <img src="assets/Partners/s_valley.png" alt="Cactus Creek" class="trust-logo-img">
+            </div>
+          </div>
+    </section>
+ <!-- ===== SERVICES SECTION ===== -->
+    <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">WHAT WE DO</span>
+        <h2 class="section-title">We Plan. You Experience.</h2>
+        <p class="section-sub">From corporate offsites to Diaspora homecomings; we handle every detail so you can be fully present.</p>
+      </div>
+      <div class="services-grid">
+        <a href="corporate.html" class="service-card" id="service-corporate">
+          <div class="service-icon-wrap">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18M5 21V7l8-4 8 4v14M9 21v-6h6v6"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <span class="service-tag">Corporate</span>
+            <h3>Corporate Team Bonding</h3>
+            <p>Stress relief for 9-5ers. Transform your team through curated adventures that rebuild energy, trust, and connection beyond the boardroom.</p>
+            <ul class="service-features">
+              <li>✓ Group coordination handled</li>
+              <li>✓ Bleisure travel packages</li>
+              <li>✓ Proposal & reporting support</li>
+            </ul>
+            <span class="service-cta">Explore Corporate Trips →</span>
+          </div>
+        </a>
+        <a href="family.html" class="service-card" id="service-family">
+          <div class="service-icon-wrap">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <span class="service-tag">Family & Groups</span>
+            <h3>Family & Group Adventures</h3>
+            <p>Safe, curated, unforgettable. From quad biking to waterfall hikes; every age group catered for with safety protocols and fun guaranteed.</p>
+            <ul class="service-features">
+              <li>✓ Family-friendly activities</li>
+              <li>✓ First-aid certified guides</li>
+              <li>✓ Group discount: 8% off</li>
+            </ul>
+            <span class="service-cta">Explore Family Trips →</span>
+          </div>
+        </a>
+        <a href="individual.html" class="service-card" id="service-diaspora">
+          <div class="service-icon-wrap">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="service-content">
+            <span class="service-tag">Diaspora & Individual</span>
+            <h3>Heritage & Diaspora Journeys</h3>
+            <p>Return with purpose. We craft deeply personal Ghana heritage tours that reconnect you with roots, culture, and community.</p>
+            <ul class="service-features">
+              <li>✓ Personalized itineraries</li>
+              <li>✓ Cultural immersion</li>
+              <li>✓ Individual & couple packages</li>
+            </ul>
+            <span class="service-cta">Explore Diaspora Trips →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ROAMCREW ===== -->
+  <section class="section why-section" id="why-roamcrew">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content" data-reveal>
+          <span class="section-badge">THE ROAMCREW DIFFERENCE</span>
+          <h2 class="section-title">We Live It.<br />Then We Plan It.</h2>
+          <p class="why-desc">RoamCrew was born from a simple belief: the best travel experiences are built by people who are truly passionate about the journey. Our founders didn't start a company — they started a movement.</p>
+          <div class="why-stats">
+            <div class="why-stat">
+              <span class="stat-number">200+</span>
+              <span class="stat-label">Crew Members Served</span>
+            </div>
+            <div class="why-stat">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Curated Destinations</span>
+            </div>
+            <div class="why-stat">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Stress-Free Guarantee</span>
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-primary">Meet the Crew</a>
+        </div>
+        <div class="why-visual" data-reveal>
+          <div class="why-bars">
+            <div class="why-bar why-bar-1" data-reveal="bar">
+              <div class="why-bar-inner">
+                <div class="why-bar-text">
+                  <h4>End-to-End Planning</h4>
+                  <p>We handle logistics, accommodation, transport, and everything in between.</p>
+                </div>
+              </div>
+            </div>
+            <div class="why-bar why-bar-2" data-reveal="bar">
+              <div class="why-bar-inner">
+                <div class="why-bar-text">
+                  <h4>Safety & Excellence</h4>
+                  <p>First-aid certified guides, risk management protocols, and 24/7 crew support.</p>
+                </div>
+              </div>
+            </div>
+            <div class="why-bar why-bar-3" data-reveal="bar">
+              <div class="why-bar-inner">
+                <div class="why-bar-text">
+                  <h4>Authentic Experiences</h4>
+                  <p>No tourist traps. Real Ghana. Real culture. Real connections.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOYALTY ===== -->
+  <section class="loyalty-section" data-reveal>
+    <div class="container">
+      <div class="loyalty-box">
+        <h2>RoamCrew Loyalty</h2>
+        <p>Join the crew and save on your next adventure.</p>
+        <div class="discount-grid">
+          <div class="discount-item">
+            <span class="percentage">5%</span>
+            <span class="label">Individual Discount</span>
+            </div>
+            <div class="discount-item">
+              <span class="percentage">8%</span>
+              <span class="label">Group Discount</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="upcoming" class="section container">
+      <h2 class="section-title" data-reveal >Next on the Roam</h2>
+      <div class="adventure-grid">
+        <div class="adventure-card card-image-bg" data-reveal data-lightbox>
+          <img class="card-bg-img" src="assets/Flyer/movies in the park.jpg" alt="movies in the park">
+          <div class="card-content">
+            <h3>Movies in the Park</h3>
+            <p>July 1st, 2026</p>
+            <a href="contact.html" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <div class="adventure-card card-image-bg" data-reveal data-lightbox>
+          <img class="card-bg-img" src="assets/Flyer/Ride  & Falls.jpg" alt="Ride  & Falls">
+          <div class="card-content">
+            <h3>Ride  & Falls</h3>
+            <p>June 5th, 2026</p>
+            <a href="contact.html" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="adventure-card card-image-bg" data-reveal data-lightbox>
+          <img class="card-bg-img" src="assets/Flyer/Detty December.jpg" alt="Detty December">
+          <div class="card-content">
+            <h3>Detty December</h3>
+            <p>December 25th, 2026</p>
+            <a href="contact.html" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CREW STORIES</span>
+        <h2 class="section-title">What the Crew Says</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">RoamCrew transformed our corporate outing. From start to finish, everything was handled seamlessly. Our team came back energized and connected like never before.</p>
+          <div class="testimonial-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">H</div>
+            <div class="author-info">
+              <span class="author-name">Hannah</span>
+              <span class="author-role">HR Innovare, Accra</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-card--featured" data-reveal>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Came back home to Ghana after 8 years abroad. RoamCrew didn't just show me places — they reconnected me with my roots. The most meaningful trip of my life.</p>
+          <div class="testimonial-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <span class="author-name">Amanda</span>
+              <span class="author-role">Diaspora Traveller, UK</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Took my family of 6 on the quad biking trip. The guides were incredible, the kids were safe, and every single moment was captured beautifully. 10/10 experience!</p>
+          <div class="testimonial-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <span class="author-name">Akorfa</span>
+              <span class="author-role">Family Traveller, Kumasi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+<span class="footer-logo">ROAMCREW</span>
+            <p class="footer-tagline">ADVENTURE.CULTURE.CONNECTIONS</p>
+            <p class="footer-desc">Curated Trips For Curated Souls</p>
+            <div class="footer-social">
+              <a href="https://www.tiktok.com/@roamcrew" target="_blank" class="social-link" aria-label="TikTok">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              </a>
+              <a href="https://www.youtube.com/@roamcrew" target="_blank" class="social-link" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/roamcrew" target="_blank" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.69-4.92-4.92-.06-1.27-.07-1.65-.07-4.85 0-3.2.01-3.58.07-4.85.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.63-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+              </a>
+              <a href="https://wa.me/233000000000" target="_blank" class="social-link" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links-group">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="corporate.html">Corporate Trips</a></li>
+              <li><a href="family.html">Family Adventures</a></li>
+              <li><a href="individual.html">Diaspora Journeys</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-group">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="records.html">Roam Record</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#loyalty">Join the Crew</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <p>Accra, Ghana</p>
+            <p><a href="tel:+233000000000">+233 000 000 000</a></p>
+            <p><a href="mailto:hello@roamcrew.com">hello@roamcrew.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 RoamCrew. All rights reserved. · Est. AD 1957</p>
+        <p>Built with love in Accra, Ghana</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/yournumber" class="whatsapp-btn" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Image Lightbox Modal -->
+  <div class="modal-overlay" id="imageLightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeModal('imageLightbox')" aria-label="Close lightbox">&times;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
