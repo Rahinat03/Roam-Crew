@@ -234,7 +234,6 @@ nav {
 footer {
   background-color: var(--color-forest-green);
   color: var(--color-cream);
-  margin-top: var(--spacing-xl);
 }
 
 .footer-top {
@@ -450,6 +449,11 @@ footer {
 /* Sections */
 .section {
   padding: var(--spacing-xl) 0;
+}
+
+/* Preserve horizontal padding when section and container are on same element */
+.section.container {
+  padding: var(--spacing-xl) var(--spacing-sm);
 }
 
 .section-title {
@@ -1486,6 +1490,46 @@ footer {
   .testimonial-text {
     font-size: 0.95rem;
   }
+
+  /* Subtle card scaling for mobile aesthetics */
+  .adventure-grid,
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .adventure-card,
+  .adventure-card.card-image-bg,
+  .adventure-card.tbd {
+    min-height: 360px;
+  }
+
+  .card-image img {
+    height: 260px;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .team-img {
+    height: 240px !important;
+    object-position: top center;
+  }
+
+  /* Ensure sections that combine .section and .container keep horizontal breathing room */
+  .section.container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+/* Team Section */
+.team-img {
+  object-position: top center;
 }
 
 /* Animations */
