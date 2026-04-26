@@ -59,12 +59,26 @@ if (hamburger && navLinks) {
         : '';
     });
   });
-  // Close on nav link click
+  // Close on nav link click (but not dropdown toggle)
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
+      // Don't close if this is a dropdown toggle
+      if (link.closest('.dropdown') && link.getAttribute('href') === '#') {
+        return;
+      }
       navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
       hamburger.querySelectorAll('span').forEach(s => s.style.transform = '');
     });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.querySelectorAll('span').forEach(s => s.style.transform = '');
+    }
   });
 }
 
@@ -218,28 +232,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const top = el.getBoundingClientRect().top + window.scrollY - 90;
       window.scrollTo({ top, behavior: 'smooth' });
     }
-  });
-});
-
-// ── CONTACT FORM SUBMIT ───────────────────────────────────
-document.querySelectorAll('.contact-form').forEach(form => {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
-    const origText = btn.textContent;
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = '✓ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #2d5a3d, #3d7a52)';
-      showToast('🚀 Message received! RoamCrew will be in touch within 24 hours.');
-      setTimeout(() => {
-        btn.textContent = origText;
-        btn.disabled = false;
-        btn.style.background = '';
-        form.reset();
-      }, 3000);
-    }, 1500);
   });
 });
 
