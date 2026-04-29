@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="assets/roamcrew-logo_favi.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,14 +38,15 @@
     </div>
   </nav>
 
-  <header class="page-header" style="background-color: var(--color-warm-sand); color: var(--color-forest-green); padding: var(--spacing-xl) 0; text-align: center;">
+  <header class="page-header" style="background-color: var(--color-warm-sand); color: var(--color-forest-green); padding: var(--spacing-xl) 0 var(--spacing-xs) 0; text-align: center;">
     <div class="container">
       <h1 data-reveal>Contact Us</h1>
       <p data-reveal>Let's Curate Your Next Moment</p>
     </div>
   </header>
 
-  <main class="container section">
+
+  <main class="container section" style="padding-top: 2.5rem;">
     <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
       <div class="contact-info" data-reveal>
         <h2>Get in Touch</h2>
@@ -68,24 +69,29 @@
 
       <div class="contact-form-container" data-reveal>
         <h2>Corporate Inquiry</h2>
-        <form class="contact-form" action="https://formsubmit.co/roamcrewgh@gmail.com" method="POST" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+        <form class="contact-form" action="https://formsubmit.co/roamcrewgh@gmail.com" method="POST" onsubmit="handleContact(event)" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+
           <input type="hidden" name="_subject" value="New contact form submission">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <div class="form-group">
-            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name <span style="color: var(--color-terracotta);">*</span></label>
             <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
           </div>
           <div class="form-group">
-            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address <span style="color: var(--color-terracotta);">*</span></label>
             <input type="email" id="email" name="email" placeholder="john@company.com" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Mobile Number <span style="color: var(--color-terracotta);">*</span></label>
+            <input type="tel" id="mobile" name="mobile" placeholder="+233 24 398 6306" pattern="^[+]?[0-9\s]*$" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
           </div>
           <div class="form-group">
             <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Company Name</label>
             <input type="text" id="company" name="company" placeholder="Acme Corp" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;">
           </div>
           <div class="form-group">
-            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message <span style="color: var(--color-terracotta);">*</span></label>
             <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirements..." style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>

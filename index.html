@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="assets/roamcrew-logo_favi.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -215,15 +215,15 @@
           <p class="why-desc">RoamCrew was born from a simple belief: the best travel experiences are built by people who are truly passionate about the journey. Our founders didn't start a company — they started a movement.</p>
           <div class="why-stats">
             <div class="why-stat">
-              <span class="stat-number">200+</span>
+              <span class="stat-number" data-count="200" data-suffix="+">0</span>
               <span class="stat-label">Crew Members Served</span>
             </div>
             <div class="why-stat">
-              <span class="stat-number">15+</span>
+              <span class="stat-number" data-count="15" data-suffix="+">0</span>
               <span class="stat-label">Curated Destinations</span>
             </div>
             <div class="why-stat">
-              <span class="stat-number">100%</span>
+              <span class="stat-number" data-count="100" data-suffix="%">0</span>
               <span class="stat-label">Stress-Free Guarantee</span>
             </div>
           </div>
@@ -233,6 +233,10 @@
           <div class="why-bars">
             <div class="why-bar why-bar-1" data-reveal="bar">
               <div class="why-bar-inner">
+                <svg class="why-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
                 <div class="why-bar-text">
                   <h4>End-to-End Planning</h4>
                   <p>We handle logistics, accommodation, transport, and everything in between.</p>
@@ -241,6 +245,9 @@
             </div>
             <div class="why-bar why-bar-2" data-reveal="bar">
               <div class="why-bar-inner">
+                <svg class="why-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
                 <div class="why-bar-text">
                   <h4>Safety & Excellence</h4>
                   <p>First-aid certified guides, risk management protocols, and 24/7 crew support.</p>
@@ -249,6 +256,11 @@
             </div>
             <div class="why-bar why-bar-3" data-reveal="bar">
               <div class="why-bar-inner">
+                <svg class="why-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
                 <div class="why-bar-text">
                   <h4>Authentic Experiences</h4>
                   <p>No tourist traps. Real Ghana. Real culture. Real connections.</p>
@@ -262,24 +274,32 @@
   </section>
 
   <!-- ===== LOYALTY ===== -->
-  <section class="loyalty-section" data-reveal>
+  <section class="section loyalty-section" id="loyalty">
     <div class="container">
-      <div class="loyalty-box">
-        <h2>RoamCrew Loyalty</h2>
-        <p>Join the crew and save on your next adventure.</p>
-        <div class="discount-grid">
-          <div class="discount-item">
-            <span class="percentage">5%</span>
-            <span class="label">Individual Discount</span>
-            </div>
-            <div class="discount-item">
-              <span class="percentage">8%</span>
-              <span class="label">Group Discount</span>
-            </div>
+      <div class="loyalty-inner">
+        <div class="loyalty-badge-wrap">
+          <span class="loyalty-badge">ROAMCREW LOYALTY PROGRAM</span>
+        </div>
+        <h2 class="loyalty-title">Join the Crew.<br>Save More. Roam More.</h2>
+        <p class="loyalty-desc">Become a member and unlock exclusive discounts every time you adventure with us.</p>
+        <div class="loyalty-perks">
+          <div class="loyalty-perk">
+            <span class="perk-percent">5%</span>
+            <span class="perk-label">Individual Discount</span>
+            <span class="perk-note">On all personal bookings</span>
+          </div>
+          <div class="loyalty-divider">+</div>
+          <div class="loyalty-perk">
+            <span class="perk-percent">8%</span>
+            <span class="perk-label">Group Discount</span>
+            <span class="perk-note">For groups of 5 or more</span>
           </div>
         </div>
+        <button class="btn btn-primary btn-lg" id="joinCrewBtn" onclick="openJoinModal()">Join the Crew — It's Free</button>
+        <p class="loyalty-fine">No spam. Ever. Just vibes, updates, and exclusive offers.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section id="upcoming" class="section container">
       <h2 class="section-title" data-reveal >Next on the Roam</h2>
@@ -374,6 +394,42 @@
             </div>
           </div>
         </div>
+        <div class="testimonial-card" data-reveal>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">RoamCrew transformed our corporate outing. From start to finish, everything was handled seamlessly. Our team came back energized and connected like never before.</p>
+          <div class="testimonial-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">H</div>
+            <div class="author-info">
+              <span class="author-name">Hannah</span>
+              <span class="author-role">HR Innovare, Accra</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-card--featured" data-reveal>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Came back home to Ghana after 8 years abroad. RoamCrew didn't just show me places — they reconnected me with my roots. The most meaningful trip of my life.</p>
+          <div class="testimonial-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <span class="author-name">Amanda</span>
+              <span class="author-role">Diaspora Traveller, UK</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -417,7 +473,7 @@
               <li><a href="about.html">About Us</a></li>
               <li><a href="records.html">Roam Record</a></li>
               <li><a href="contact.html">Contact</a></li>
-              <li><a href="#loyalty">Join the Crew</a></li>
+              <li><a href="#loyalty" onclick="openJoinModal(); return false;">Join the Crew</a></li>
             </ul>
           </div>
           <div class="footer-contact">
@@ -448,6 +504,39 @@
       <img class="lightbox-img" id="lightboxImg" src="" alt="">
       <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
+  </div>
+
+  <!-- Join Crew Modal -->
+  <div class="modal-overlay" id="joinModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('joinModal')">✕</button>
+      <img src="assets/roamcrew-logo.png" alt="RoamCrew Logo" class="modal-logo">
+      <h3 class="modal-title">Join the Crew</h3>
+      <p class="modal-sub">Get exclusive access to upcoming trips, loyalty discounts (5% individual / 8% group), and first dibs on limited spots.</p>
+      <form class="modal-form" id="joinForm" onsubmit="handleJoin(event)" action="https://formsubmit.co/roamcrewgh@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Loyalty Program Signup">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="form_source" value="Loyalty Program">
+        <input type="text" name="fullname" placeholder="Your Full Name" required class="modal-input" id="joinName">
+        <input type="email" name="email" placeholder="Your Email Address" required class="modal-input" id="joinEmail">
+        <input type="tel" name="whatsapp" placeholder="WhatsApp Number (with country code)" class="modal-input" id="joinWhatsapp">
+        <select name="interest" class="modal-input" id="joinInterest">
+          <option value="">I'm interested in…</option>
+          <option value="corporate">Corporate Trips</option>
+          <option value="family">Family Adventures</option>
+          <option value="diaspora">Diaspora Journey</option>
+          <option value="all">All of the Above!</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-full">Activate My Membership</button>
+      </form>
+      <p class="modal-fine">No spam. Only good vibes and exclusive drops.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="successToast">
+    <span class="toast-icon">🎉</span>
+    <span id="toastMessage">You're in the crew!</span>
   </div>
 
   <script src="main.js"></script>

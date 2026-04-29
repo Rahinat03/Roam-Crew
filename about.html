@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="assets/roamcrew-logo_favi.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,8 +38,10 @@
     </div>
   </nav>
 
-  <header class="page-header" style="background-color: var(--color-forest-green); color: var(--color-cream); padding: var(--spacing-xl) 0; text-align: center;">
-    <div class="container">
+  <header class="hero">
+    <img src="assets/About_hero.jpg" alt="About RoamCrew" class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
       <h1 data-reveal>About RoamCrew</h1>
       <p data-reveal>Your Xperience Curators</p>
     </div>
@@ -49,16 +51,25 @@
     <section class="values" style="text-align: center; margin-bottom: 5rem;">
       <h2 data-reveal>Our Core Values</h2>
       <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-top: 3rem;">
-        <div class="value-item" data-reveal>
-          <h3>Inclusive</h3>
+        <div class="value-card" data-reveal>
+          <div class="value-icon-wrap">
+            <img src="assets/Inclusivity.png" alt="Inclusive" class="value-icon-img">
+          </div>
+          <h3>Inclusivity</h3>
           <p>We believe adventure is for everyone, creating spaces where all feel welcome.</p>
         </div>
-        <div class="value-item" data-reveal>
-          <h3>Adventurous</h3>
+        <div class="value-card" data-reveal>
+          <div class="value-icon-wrap">
+            <img src="assets/Adventure.png" alt="Adventurous" class="value-icon-img">
+          </div>
+          <h3>Adventure</h3>
           <p>We push boundaries and explore the path less traveled.</p>
         </div>
-        <div class="value-item" data-reveal>
-          <h3>Professional</h3>
+        <div class="value-card" data-reveal>
+          <div class="value-icon-wrap">
+            <img src="assets/Professionalism.png" alt="Professional" class="value-icon-img">
+          </div>
+          <h3>Professionalism</h3>
           <p>We deliver excellence through meticulous planning and reliable execution.</p>
         </div>
       </div>

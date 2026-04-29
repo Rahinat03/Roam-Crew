@@ -144,10 +144,64 @@ window.openJoinModal = () => openModal('joinModal');
 
 window.handleJoin = (e) => {
   e.preventDefault();
-  closeModal('joinModal');
-  showToast('🎉 You\'re in the crew! Check your inbox for your loyalty code.');
-  e.target.reset();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(() => {
+    closeModal('joinModal');
+    showJoinOverlay();
+    form.reset();
+  })
+  .catch(() => {
+    closeModal('joinModal');
+    showJoinOverlay();
+    form.reset();
+  });
 };
+
+function showJoinOverlay() {
+  let overlay = document.getElementById('joinOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'joinOverlay';
+    overlay.className = 'contact-overlay';  // Reuse contact styles
+    overlay.innerHTML = `
+      <div class="contact-popup">
+        <div>🎉 You're in the crew! You'll recieve your loyalty code within 24hours.</div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  const hideTimer = setTimeout(() => closeJoinOverlay(overlay), 5000);
+
+  const handler = (ev) => {
+    if (ev.target === overlay) {
+      clearTimeout(hideTimer);
+      overlay.removeEventListener('click', handler);
+      closeJoinOverlay(overlay);
+    }
+  };
+  overlay.addEventListener('click', handler);
+}
+
+function closeJoinOverlay(overlay) {
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    if (overlay && !overlay.classList.contains('show')) {
+      overlay.remove();
+    }
+  }, 400);
+}
+
 
 // ── NOTIFY ME MODAL ───────────────────────────────────────
 window.openNotifyModal = (tripDate) => {
@@ -185,17 +239,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ── AUTO POPUP (Join Crew) ────────────────────────────────
-const hasSeenPopup = sessionStorage.getItem('rc_popup_seen');
-if (!hasSeenPopup) {
-  setTimeout(() => {
-    if (!document.querySelector('.modal-overlay.active')) {
-      openJoinModal();
-      sessionStorage.setItem('rc_popup_seen', '1');
-    }
-  }, 9000);
-}
 
 // ── CONTACT FORM TABS ─────────────────────────────────────
 document.querySelectorAll('.form-tab').forEach(tab => {
@@ -279,5 +322,115 @@ document.querySelectorAll('.dropdown > .nav-link').forEach(toggle => {
   });
 });
 
+// ── WHY STAT COUNT-UP ─────────────────────────────────────
+(function initWhyCountUp() {
+  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+  if (statNumbers.length === 0) return;
+
+  const duration = 1500; // ms — reasonably fast
+
+  function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
+  }
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutQuart(progress);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statNumbers.forEach(el => countObserver.observe(el));
+})();
+
+// ── WHY BAR CLICK / TAP ACTIVE STATE ──────────────────────
+document.querySelectorAll('.why-bar').forEach(bar => {
+  bar.addEventListener('click', () => {
+    // Toggle active class; remove from siblings for single-active feel
+    const isActive = bar.classList.contains('active');
+    document.querySelectorAll('.why-bar').forEach(b => b.classList.remove('active'));
+    if (!isActive) {
+      bar.classList.add('active');
+    }
+  });
+});
+
 console.log('%cRoamCrew 🌿 — Rooted in Ghana. Built for the World.', 
   'color:#c4622d;font-size:1rem;font-weight:700;');
+
+// ── CONTACT FORM HANDLER ─────────────────────────────────────
+window.handleContact = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  // Submit via fetch for real backend (fire-and-forget)
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  }).catch(console.error);
+
+  // Create overlay if not exists
+  let overlay = document.getElementById('contactOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'contactOverlay';
+    overlay.className = 'contact-overlay';
+    overlay.innerHTML = `
+      <div class="contact-popup">
+        <div>Your enquiry has been submitted. Thank you</div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+  }
+
+  // Show overlay
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  // Auto-hide after 5s
+  const hideTimer = setTimeout(() => closeContactOverlay(overlay), 5000);
+
+  // Hide on overlay click (not popup)
+  const handler = (ev) => {
+    if (ev.target === overlay) {
+      clearTimeout(hideTimer);
+      overlay.removeEventListener('click', handler);
+      closeContactOverlay(overlay);
+    }
+  };
+  overlay.addEventListener('click', handler);
+};
+
+function closeContactOverlay(overlay) {
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  // Cleanup after animation
+  setTimeout(() => {
+    if (overlay && !overlay.classList.contains('show')) {
+      overlay.remove();
+    }
+  }, 400);
+}
