@@ -377,6 +377,30 @@ document.querySelectorAll('.why-bar').forEach(bar => {
   });
 });
 
+// ── GALLERY LIGHTBOX ────────────────────────────────────────
+function openGalleryLightbox(src, caption) {
+  const lightbox = document.getElementById('galleryLightbox');
+  const img = document.getElementById('galleryLightboxImg');
+  const cap = document.getElementById('galleryLightboxCaption');
+  if (lightbox && img) {
+    img.src = src;
+    if (cap) cap.textContent = caption || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+window.openGalleryLightbox = openGalleryLightbox;
+
+function closeGalleryLightbox(event) {
+  if (event && event.target !== event.currentTarget) return;
+  const lightbox = document.getElementById('galleryLightbox');
+  if (lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+window.closeGalleryLightbox = closeGalleryLightbox;
+
 console.log('%cRoamCrew 🌿 — Rooted in Ghana. Built for the World.', 
   'color:#c4622d;font-size:1rem;font-weight:700;');
 
