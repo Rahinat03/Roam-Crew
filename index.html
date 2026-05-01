@@ -261,16 +261,16 @@
           <p class="why-desc">RoamCrew was born from a simple belief: the best travel experiences are built by people who are truly passionate about the journey. Our founders didn't start a company — they started a movement.</p>
           <div class="why-stats">
             <div class="why-stat">
-              <span class="stat-number" data-count="200" data-suffix="+">0</span>
-              <span class="stat-label">Crew Members Served</span>
+              <span class="why_stat-number" data-count="200" data-suffix="+">0</span>
+              <span class="why_stat-label">Crew Members Served</span>
             </div>
             <div class="why-stat">
-              <span class="stat-number" data-count="15" data-suffix="+">0</span>
-              <span class="stat-label">Curated Destinations</span>
+              <span class="why_stat-number" data-count="15" data-suffix="+">0</span>
+              <span class="why_stat-label">Curated Destinations</span>
             </div>
             <div class="why-stat">
-              <span class="stat-number" data-count="100" data-suffix="%">0</span>
-              <span class="stat-label">Stress-Free Guarantee</span>
+              <span class="why_stat-number" data-count="100" data-suffix="%">0</span>
+              <span class="why_stat-label">Stress-Free Guarantee</span>
             </div>
           </div>
           <a href="about.html" class="btn btn-primary">Meet the Crew</a>
@@ -355,7 +355,7 @@
           <div class="card-content">
             <h3>Movies in the Park</h3>
             <p>July 1st, 2026</p>
-            <a href="contact.html" class="btn btn-primary">Book Now</a>
+            <a href="#" onclick="openBookModal('Movies in the Park'); return false;" class="btn btn-primary">Book Now</a>
           </div>
         </div>
 
@@ -364,7 +364,7 @@
           <div class="card-content">
             <h3>Ride  & Falls</h3>
             <p>June 5th, 2026</p>
-            <a href="contact.html" class="btn btn-primary">Book Now</a>
+            <a href="#" onclick="openBookModal('Ride & Falls'); return false;" class="btn btn-primary">Book Now</a>
           </div>
         </div>
         <div class="adventure-card card-image-bg" data-reveal data-lightbox>
@@ -372,7 +372,7 @@
           <div class="card-content">
             <h3>Detty December</h3>
             <p>December 25th, 2026</p>
-            <a href="contact.html" class="btn btn-primary">Book Now</a>
+            <a href="#" onclick="openBookModal('Detty December'); return false;" class="btn btn-primary">Book Now</a>
           </div>
         </div>
       </div>
@@ -385,7 +385,7 @@
         <span class="section-badge">CREW STORIES</span>
         <h2 class="section-title">What the Crew Says</h2>
       </div>
-      <div class="testimonials-grid">
+      <div class="testimonials-grid" id="testimonialsGrid">
         <div class="testimonial-card" data-reveal>
           <div class="testimonial-quote">"</div>
           <p class="testimonial-text">We found RoamCrew through a post while in Burkina Faso, and it turned out to be one of our best decisions. The trip from Accra to Bunso Eco Park was smooth, intentional, and full of great energy. Every hour was worth it, and we’d do it again.</p>
@@ -459,6 +459,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <button id="seeMoreTestimonialsBtn" class="btn btn-outline" onclick="document.getElementById('testimonialsGrid').classList.toggle('expanded'); this.textContent = this.textContent === 'See More' ? 'See Less' : 'See More';">See More</button>
       </div>
     </div>
   </section>
@@ -542,7 +545,7 @@
       <img src="assets/roamcrew-logo.png" alt="RoamCrew Logo" class="modal-logo">
       <h3 class="modal-title">Join the Crew</h3>
       <p class="modal-sub">Get exclusive access to upcoming trips, loyalty discounts (5% individual / 8% group), and first dibs on limited spots.</p>
-      <form class="modal-form" id="joinForm" onsubmit="handleJoin(event)" action="https://formsubmit.co/roamcrewgh@gmail.com" method="POST">
+      <form class="modal-form" id="joinForm" onsubmit="handleJoin(event)" action="https://formsubmit.co/rahinakohusnah@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New Loyalty Program Signup">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -560,6 +563,32 @@
         <button type="submit" class="btn btn-primary btn-full">Activate My Membership</button>
       </form>
       <p class="modal-fine">No spam. Only good vibes and exclusive drops.</p>
+    </div>
+  </div>
+
+  <!-- Book Event Modal -->
+  <div class="modal-overlay" id="bookModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('bookModal')">✕</button>
+      <img src="assets/roamcrew-logo.png" alt="RoamCrew Logo" class="modal-logo">
+      <h3 class="modal-title">Book Your Event</h3>
+      <p class="modal-sub">Secure your spot for our upcoming curated experiences.</p>
+      <form class="modal-form" id="bookForm" onsubmit="handleBook(event)" action="https://formsubmit.co/rahinakohusnah@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Event Booking">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="form_source" value="Event Booking">
+        <input type="text" name="fullname" placeholder="Your Full Name" required class="modal-input" id="bookName">
+        <input type="email" name="email" placeholder="Your Email Address" required class="modal-input" id="bookEmail">
+        <input type="tel" name="whatsapp" placeholder="WhatsApp Number (with country code)" required class="modal-input" id="bookWhatsapp">
+        <select name="event" class="modal-input" id="bookEvent" required>
+          <option value="">Select an Event…</option>
+          <option value="Movies in the Park">Movies in the Park</option>
+          <option value="Ride & Falls">Ride & Falls</option>
+          <option value="Detty December">Detty December</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-full">Book Now</button>
+      </form>
     </div>
   </div>
 

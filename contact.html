@@ -67,13 +67,9 @@
         </div>
       </div>
 
-      <div class="contact-form-container" data-reveal>
+<div class="contact-form-container" data-reveal>
         <h2>Corporate Inquiry</h2>
-        <form class="contact-form" action="https://formsubmit.co/roamcrewgh@gmail.com" method="POST" onsubmit="handleContact(event)" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
-
-          <input type="hidden" name="_subject" value="New contact form submission">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+        <form class="contact-form" id="contactForm" onsubmit="handleContact(event)" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
           <div class="form-group">
             <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name <span style="color: var(--color-terracotta);">*</span></label>
             <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;" required>
